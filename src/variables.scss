@@ -117,11 +117,14 @@ $space-2xl-3xl: clamp(4rem, calc(2.98rem + 5.83vw), 7.5rem);
 /* Space s-l: 16px → 40px */
 $space-s-l: clamp(1rem, calc(0.56rem + 2.5vw), 2.5rem);
 
-$surface: hsl(56, 60%, 88%);
-$on-surface: hsl(56, 30%, 15%);
+$surface: hsl(49, 88%, 94%);
+$on-surface: hsl(49, 28%, 15%);
 
-$beige: hsl(26, 98%, 77%);
-$on-beige: hsl(26, 28%, 15%);
+$variant: hsl(45, 86%, 86%);
+$on-variant: hsl(45, 26%, 15%);
+
+$beige: hsl(36, 85%, 79%);
+$on-beige: hsl(36, 25%, 15%);
 
 $green: hsl(101, 53%, 76%);
 $on-green: hsl(101, 23%, 15%);
@@ -129,15 +132,16 @@ $on-green: hsl(101, 23%, 15%);
 $salmon: hsl(24, 93%, 73%);
 $on-salmon: hsl(24, 23%, 15%);
 
-$red: hsl(11, 44%, 62%);
-$on-red: hsl(11, 24%, 15%);
+$red: hsl(18, 98%, 79%);
+$on-red: hsl(18, 28%, 15%);
 
-$primary: hsl(59, 94%, 64%);
-$on-primary: hsl(59, 24%, 15%);
+$primary: hsl(47, 89%, 65%);
+$on-primary: hsl(47, 29%, 15%);
 
 $secondary: hsl(161, 48%, 62%);
 $on-secondary: hsl(161, 28%, 15%);
 
+$link-on-primary: hsl(90, 33%, 99%);
 
 /* Step -2: 11.11px → 12.80px */
 $step--2: clamp(0.69rem, calc(0.66rem + 0.18vw), 0.8rem);
@@ -162,3 +166,9 @@ $step-4: clamp(2.07rem, calc(1.79rem + 1.63vw), 3.05rem);
 
 /* Step 5: 39.81px → 61.04px */
 $step-5: clamp(2.49rem, calc(2.1rem + 2.21vw), 3.82rem);
+
+@mixin keyframes($name) {
+	@keyframes #{$name} {
+		@content;
+	}
+}
