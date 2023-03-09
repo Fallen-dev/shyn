@@ -1,0 +1,164 @@
+@font-face {
+	font-family: boska;
+	src: url('/fonts/Boska-Bold.woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: boska;
+	src: url('/fonts/Boska-Medium.woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: boska;
+	src: url('/fonts/Boska-Regular.woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: boska;
+	src: url('/fonts/Boska-Light.woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: gsans;
+	src: url('/fonts/GeneralSans-Bold.woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: gsans;
+	src: url('/fonts/GeneralSans-Semibold.woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: gsans;
+	src: url('/fonts/GeneralSans-Medium.woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: gsans;
+	src: url('/fonts/GeneralSans-Regular.woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: gsans;
+	src: url('/fonts/GeneralSans-Light.woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+/* Space 3xs: 4px → 5px */
+$space-3xs: clamp(0.25rem, calc(0.23rem + 0.1vw), 0.31rem);
+
+/* Space 2xs: 8px → 10px */
+$space-2xs: clamp(0.5rem, calc(0.46rem + 0.21vw), 0.63rem);
+
+/* Space xs: 12px → 15px */
+$space-xs: clamp(0.75rem, calc(0.7rem + 0.31vw), 0.94rem);
+
+/* Space s: 16px → 20px */
+$space-s: clamp(1rem, calc(0.93rem + 0.42vw), 1.25rem);
+
+/* Space m: 24px → 30px */
+$space-m: clamp(1.5rem, calc(1.39rem + 0.63vw), 1.88rem);
+
+/* Space l: 32px → 40px */
+$space-l: clamp(2rem, calc(1.85rem + 0.83vw), 2.5rem);
+
+/* Space xl: 48px → 60px */
+$space-xl: clamp(3rem, calc(2.78rem + 1.25vw), 3.75rem);
+
+/* Space 2xl: 64px → 80px */
+$space-2xl: clamp(4rem, calc(3.71rem + 1.67vw), 5rem);
+
+/* Space 3xl: 96px → 120px */
+$space-3xl: clamp(6rem, calc(5.56rem + 2.5vw), 7.5rem);
+
+/* One-up pairs */
+/* Space 3xs-2xs: 4px → 10px */
+$space-3xs-2xs: clamp(0.25rem, calc(0.14rem + 0.63vw), 0.63rem);
+
+/* Space 2xs-xs: 8px → 15px */
+$space-2xs-xs: clamp(0.5rem, calc(0.37rem + 0.73vw), 0.94rem);
+
+/* Space xs-s: 12px → 20px */
+$space-xs-s: clamp(0.75rem, calc(0.6rem + 0.83vw), 1.25rem);
+
+/* Space s-m: 16px → 30px */
+$space-s-m: clamp(1rem, calc(0.74rem + 1.46vw), 1.88rem);
+
+/* Space m-l: 24px → 40px */
+$space-m-l: clamp(1.5rem, calc(1.21rem + 1.67vw), 2.5rem);
+
+/* Space l-xl: 32px → 60px */
+$space-l-xl: clamp(2rem, calc(1.49rem + 2.92vw), 3.75rem);
+
+/* Space xl-2xl: 48px → 80px */
+$space-xl-2xl: clamp(3rem, calc(2.42rem + 3.33vw), 5rem);
+
+/* Space 2xl-3xl: 64px → 120px */
+$space-2xl-3xl: clamp(4rem, calc(2.98rem + 5.83vw), 7.5rem);
+
+/* Custom pairs */
+/* Space s-l: 16px → 40px */
+$space-s-l: clamp(1rem, calc(0.56rem + 2.5vw), 2.5rem);
+
+$surface: hsl(56, 60%, 88%);
+$on-surface: hsl(56, 30%, 15%);
+
+$beige: hsl(26, 98%, 77%);
+$on-beige: hsl(26, 28%, 15%);
+
+$green: hsl(101, 53%, 76%);
+$on-green: hsl(101, 23%, 15%);
+
+$salmon: hsl(24, 93%, 73%);
+$on-salmon: hsl(24, 23%, 15%);
+
+$red: hsl(11, 44%, 62%);
+$on-red: hsl(11, 24%, 15%);
+
+$primary: hsl(59, 94%, 64%);
+$on-primary: hsl(59, 24%, 15%);
+
+$secondary: hsl(161, 48%, 62%);
+$on-secondary: hsl(161, 28%, 15%);
+
+
+/* Step -2: 11.11px → 12.80px */
+$step--2: clamp(0.69rem, calc(0.66rem + 0.18vw), 0.8rem);
+
+/* Step -1: 13.33px → 16.00px */
+$step--1: clamp(0.83rem, calc(0.78rem + 0.28vw), 1rem);
+
+/* Step 0: 16.00px → 20.00px */
+$step-0: clamp(1rem, calc(0.93rem + 0.42vw), 1.25rem);
+
+/* Step 1: 19.20px → 25.00px */
+$step-1: clamp(1.2rem, calc(1.09rem + 0.6vw), 1.56rem);
+
+/* Step 2: 23.04px → 31.25px */
+$step-2: clamp(1.44rem, calc(1.29rem + 0.86vw), 1.95rem);
+
+/* Step 3: 27.65px → 39.06px */
+$step-3: clamp(1.73rem, calc(1.52rem + 1.19vw), 2.44rem);
+
+/* Step 4: 33.18px → 48.83px */
+$step-4: clamp(2.07rem, calc(1.79rem + 1.63vw), 3.05rem);
+
+/* Step 5: 39.81px → 61.04px */
+$step-5: clamp(2.49rem, calc(2.1rem + 2.21vw), 3.82rem);
