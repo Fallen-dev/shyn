@@ -1,8 +1,7 @@
-import type { LayoutServerLoad } from "./$types";
+import type { LayoutServerLoad } from './$types'
 
-export const load: LayoutServerLoad = async ({url}) => {
-  
-  return {
-    url: url.pathname
-  }
-};
+export const load: LayoutServerLoad = async ({ url }) => {
+	return {
+		url: url.pathname
+	}
+}

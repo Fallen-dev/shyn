@@ -1,7 +1,7 @@
-import preprocess from "svelte-preprocess";
-import adapter from '@sveltejs/adapter-auto';
-import { vitePreprocess } from '@sveltejs/kit/vite';
-import autoprefixer from "autoprefixer";
+import preprocess from 'svelte-preprocess'
+import adapter from '@sveltejs/adapter-auto'
+import { vitePreprocess } from '@sveltejs/kit/vite'
+import autoprefixer from 'autoprefixer'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,13 +10,14 @@ const config = {
 	preprocess: [
 		vitePreprocess(),
 		preprocess({
-  scss: {
-        prependData: '@use "src/variables.scss" as *;',
-      },
-        postcss: {
-					plugins: [autoprefixer()]
-				}
-    })],
+			scss: {
+				prependData: '@use "src/variables.scss" as *;'
+			},
+			postcss: {
+				plugins: [autoprefixer()]
+			}
+		})
+	],
 
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
@@ -24,6 +25,6 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter()
 	}
-};
+}
 
-export default config;
+export default config

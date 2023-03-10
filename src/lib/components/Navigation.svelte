@@ -29,6 +29,7 @@
 		<div class="nav-item" class:link-active={url.includes('bag')}>
 			<a href="/bag" aria-label="Bag">
 				{#if url.includes('bag')}
+					<div in:slide={{ duration: 600 }} class:link-active={url.includes('bag')} />
 					<Icon>
 						<Bag_1 />
 					</Icon>
@@ -46,11 +47,11 @@
 			<a href="/">
 				{#if url === '/'}
 					<div in:slide={{ duration: 600 }} class:link-active={url === '/'} />
-					<Icon width="20">
+					<Icon>
 						<Home_1 />
 					</Icon>
 				{:else}
-					<Icon width="20">
+					<Icon>
 						<Home />
 					</Icon>
 				{/if}
@@ -60,11 +61,11 @@
 			<a href="/categories">
 				{#if url.includes('categories')}
 					<div in:slide={{ duration: 600 }} class:link-active={url.includes('categories')} />
-					<Icon width="20">
+					<Icon>
 						<Category_1 />
 					</Icon>
 				{:else}
-					<Icon width="20">
+					<Icon>
 						<Category />
 					</Icon>
 				{/if}
@@ -74,11 +75,11 @@
 			<a href="/search">
 				{#if url.includes('search')}
 					<div in:slide={{ duration: 600 }} class:link-active={url.includes('search')} />
-					<Icon width="20">
+					<Icon>
 						<Search_1 />
 					</Icon>
 				{:else}
-					<Icon width="20">
+					<Icon>
 						<Search />
 					</Icon>
 				{/if}
@@ -88,11 +89,11 @@
 			<a href="/wishlist">
 				{#if url.includes('wishlist')}
 					<div in:slide={{ duration: 600 }} class:link-active={url.includes('wishlist')} />
-					<Icon width="20">
+					<Icon>
 						<Heart_1 />
 					</Icon>
 				{:else}
-					<Icon width="20">
+					<Icon>
 						<Heart />
 					</Icon>
 				{/if}
@@ -102,11 +103,11 @@
 			<a href="/setting">
 				{#if url.includes('setting')}
 					<div in:slide={{ duration: 600 }} class:link-active={url.includes('setting')} />
-					<Icon width="20">
+					<Icon>
 						<Setting_1 />
 					</Icon>
 				{:else}
-					<Icon width="20">
+					<Icon>
 						<Setting />
 					</Icon>
 				{/if}
@@ -155,8 +156,8 @@
 		}
 
 		& > .nav-item {
-			padding-top: 0.4rem;
-			padding-inline: $space-2xs;
+			padding-top: 0.2rem;
+			padding-inline: $space-xs;
 			flex-shrink: 0;
 			position: relative;
 
@@ -165,12 +166,12 @@
 				inset: 0;
 				z-index: -1;
 				background-color: $primary;
-				border-radius: 1rem 0.5rem 1rem 0.5rem;
+				border-radius: 0.5rem 1rem;
 				transform: rotate(-4deg);
 			}
 
 			& > a:has(.link-active) {
-				animation: change-color 100ms linear forwards 80ms;
+				animation: change-color 100ms linear forwards;
 			}
 		}
 
