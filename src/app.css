@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: boska;
+		src: url('/fonts/Boska-Bold.woff');
+		font-weight: 700;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: boska;
+		src: url('/fonts/Boska-Medium.woff');
+		font-weight: 500;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: boska;
+		src: url('/fonts/Boska-Regular.woff');
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: boska;
+		src: url('/fonts/Boska-Light.woff');
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: gsans;
+		src: url('/fonts/GeneralSans-Bold.woff');
+		font-weight: 700;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: gsans;
+		src: url('/fonts/GeneralSans-Semibold.woff');
+		font-weight: 600;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: gsans;
+		src: url('/fonts/GeneralSans-Medium.woff');
+		font-weight: 500;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: gsans;
+		src: url('/fonts/GeneralSans-Regular.woff');
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: gsans;
+		src: url('/fonts/GeneralSans-Light.woff');
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		@apply font-serif;
+		@apply leading-none;
+	}
+
+	h1 {
+		@apply text-3xl;
+	}
+
+	h2 {
+		@apply text-xl font-medium tracking-wide;
+	}
+
+	h6 {
+		font-weight: 700;
+	}
+
+	button,
+	a[role='button'] {
+		@apply inline-block text-current bg-amber-300 outline-none border border-amber-300 active:border-amber-600 focus-visible:border-amber-600 font-bold font-serif tracking-wide text-sm rounded-full py-3 px-4;
+	}
+
+	button.btn-outline,
+	a[role='button'].btn-outline {
+		@apply bg-transparent border-black;
+	}
+
+	a {
+		text-decoration: underline;
+		font-weight: 500;
+	}
+
+	a[role='button'] {
+		text-decoration: none;
+	}
+}
+
+@layer components {
+	.card {
+		@apply max-w-sm p-6 bg-[bisque] space-y-4;
+	}
+}
