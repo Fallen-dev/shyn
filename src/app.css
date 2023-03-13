@@ -33,36 +33,243 @@
 }
 
 @font-face {
-	font-family: gsans;
-	src: url('/fonts/GeneralSans-Bold.woff');
+	font-family: satoshi;
+	src: url('/fonts/Satoshi-Bold.woff');
 	font-weight: 700;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: gsans;
-	src: url('/fonts/GeneralSans-Semibold.woff');
-	font-weight: 600;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: gsans;
-	src: url('/fonts/GeneralSans-Medium.woff');
+	font-family: satoshi;
+	src: url('/fonts/Satoshi-Medium.woff');
 	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: gsans;
-	src: url('/fonts/GeneralSans-Regular.woff');
+	font-family: satoshi;
+	src: url('/fonts/Satoshi-Regular.woff');
 	font-weight: 400;
 	font-style: normal;
 }
 
-@font-face {
-	font-family: gsans;
-	src: url('/fonts/GeneralSans-Light.woff');
-	font-weight: 300;
-	font-style: normal;
+/* @link https://utopia.fyi/type/calculator?c=280,16,1.2,1240,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+	/* Font size */
+	--step--2: clamp(0.69rem, calc(0.69rem + 0.04vw), 0.72rem);
+	--step--1: clamp(0.83rem, calc(0.81rem + 0.11vw), 0.9rem);
+	--step-0: clamp(1rem, calc(0.96rem + 0.21vw), 1.13rem);
+	--step-1: clamp(1.2rem, calc(1.14rem + 0.34vw), 1.41rem);
+	--step-2: clamp(1.44rem, calc(1.35rem + 0.53vw), 1.76rem);
+	--step-3: clamp(1.73rem, calc(1.59rem + 0.78vw), 2.2rem);
+	--step-4: clamp(2.07rem, calc(1.88rem + 1.12vw), 2.75rem);
+	--step-5: clamp(2.49rem, calc(2.21rem + 1.58vw), 3.43rem);
+	/* SPACE */
+	--space-3xs: clamp(0.25rem, calc(0.23rem + 0.1vw), 0.31rem);
+	--space-2xs: clamp(0.5rem, calc(0.48rem + 0.1vw), 0.56rem);
+	--space-xs: clamp(0.75rem, calc(0.71rem + 0.21vw), 0.88rem);
+	--space-s: clamp(1rem, calc(0.96rem + 0.21vw), 1.13rem);
+	--space-m: clamp(1.5rem, calc(1.45rem + 0.31vw), 1.69rem);
+	--space-l: clamp(2rem, calc(1.93rem + 0.42vw), 2.25rem);
+	--space-xl: clamp(3rem, calc(2.89rem + 0.63vw), 3.38rem);
+	--space-2xl: clamp(4rem, calc(3.85rem + 0.83vw), 4.5rem);
+	--space-3xl: clamp(6rem, calc(5.78rem + 1.25vw), 6.75rem);
+}
+
+html {
+	overscroll-behavior: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+body {
+	margin-inline: auto;
+	max-width: 32rem;
+	min-height: 100vh;
+	font-family: satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: var(--step-0);
+	font-weight: 400;
+	line-height: 1.5;
+	background-color: var(--surface);
+	color: var(--on-surface);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: boska, 'Times New Roman', Times, serif;
+}
+
+h1 {
+	font-size: var(--step-5);
+	font-weight: 500;
+	line-height: 1;
+}
+h2 {
+	font-size: var(--step-4);
+	font-weight: 400;
+	line-height: 1;
+}
+h3 {
+	font-size: var(--step-2);
+	font-weight: 700;
+	line-height: 1.125;
+}
+h5 {
+	font-size: var(--step--1);
+	font-weight: 700;
+	line-height: 1.25;
+}
+h6 {
+	font-family: inherit;
+	font-size: var(--step-0);
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+a:not([role='button']) {
+	text-decoration: underline;
+	font-weight: 500;
+}
+
+article h2 {
+	text-transform: uppercase;
+}
+
+button,
+a[role='button'] {
+	background-color: var(--background);
+	border: 2px solid var(--color);
+	box-shadow: var(--color) 4px 4px 0 0;
+	color: var(--color);
+	padding-block: var(--space-xs);
+	padding-inline: var(--space-m);
+	border-radius: 999px;
+
+	font-weight: 700;
+	font-size: var(--step--1);
+
+	cursor: pointer;
+
+	width: max-content;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: var(--gap);
+}
+
+button.small,
+a[role='button'].small {
+	padding-block: calc(var(--space-xs) - 0.25rem);
+	padding-inline: var(--space-s);
+}
+
+button.fullWidth,
+a[role='button'].fullWidth {
+	padding-block: var(--space-s);
+	width: 100%;
+}
+
+button:is(:active, :focus-visible):not(:disabled),
+a[role='button']:is(:active, :focus-visible) {
+	box-shadow: var(--color) 2px 2px 0 0;
+	transform: translate(2px, 2px);
+}
+
+button:disabled {
+	background-color: var(--outline-variant);
+	color: var(--outline);
+	cursor: not-allowed;
+}
+
+picture {
+	display: block;
+	overflow: hidden;
+	border-radius: var(--step-3);
+}
+
+.card {
+	padding: var(--space-m);
+	border-radius: var(--step-3);
+}
+
+.card.no-border-radius {
+	border-radius: 0;
+}
+
+.card h3 {
+	font-size: var(--step-2);
+}
+/* 
+.card > *:not(h3, button, a[role='button']) {
+	font-size: var(--step--1);
+} */
+
+.card > * + * {
+	margin-top: var(--step--1);
+}
+
+.flex {
+	display: flex;
+	align-items: start;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.justify-content-end {
+	justify-content: end;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.align-items-end {
+	align-items: end;
+}
+
+.border-radius {
+	border-radius: var(--step-3);
+}
+
+.container {
+	padding: var(--space-m);
+}
+
+.scroll {
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	scroll-snap-type: x mandatory;
+}
+
+.scroll .card {
+	width: 80%;
+	flex-shrink: 0;
+	scroll-snap-align: start;
+	aspect-ratio: 16/9;
+}
+
+.scroll > * + * {
+	margin-inline: var(--space-s);
+}
+
+.scroll.horizontal {
+	overflow-x: scroll;
 }
