@@ -1,42 +1,96 @@
-<script>
-	import FloatingCard from '$lib/components/layouts/FloatingCard.svelte'
+<script lang="ts">
+	import type { PageServerData } from './$types'
+
 	import Button from '$lib/components/Button.svelte'
+	import FloatingCard from '$lib/components/layouts/FloatingCard.svelte'
 	import Vertical from '$lib/components/layouts/Vertical.svelte'
+	import TopBar from '$lib/components/TopBar.svelte'
+
+	export let data: PageServerData
+
+	const { products } = data.products
+
+	const deals = [
+		{
+			type: 'primary',
+			title: 'Best deals',
+			desc: 'On electronics',
+			heading: '36%<span>Off</span>',
+			btnText: 'Shop now'
+		},
+		{
+			type: 'secondary',
+			title: 'Bag',
+			desc: 'Collection',
+			heading: 'Wow!',
+			btnText: 'View'
+		},
+		{
+			type: 'tertiary',
+			title: 'Too early',
+			desc: 'WIP stage',
+			heading: 'Shyn',
+			btnText: 'Thanks for visiting Shyn'
+		}
+	]
 </script>
 
-<Button role="link" href="/design/system" small={true} gap=".5rem"
-	>Check out the design system
-	<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-		<path
-			fill-rule="evenodd"
-			d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
-			clip-rule="evenodd"
-		/>
-	</svg>
-</Button>
+<TopBar />
 
-<div class="container">
-	<div class="card primary-container">
-		<div class="tw-flex tw-justify-between tw-items-center">
-			<article>
-				<h3>Best deals</h3>
-				<p>On Electronics</p>
-			</article>
-			<article>
-				<h2>36% off</h2>
-			</article>
-		</div>
-		<Button fullWidth="true" small="true">Shop now</Button>
+<section class="container">
+	<div class="scroll horizontal">
+		{#each deals as deal}
+			<div class="card scroll-item {deal.type}-container on-{deal.type}-container-text">
+				<div class="tw-flex tw-justify-between tw-items-center tw-gap-6">
+					<article>
+						<h3>{deal.title}</h3>
+						<p>{deal.desc}</p>
+					</article>
+					{#if deal.heading}
+						<h1>{@html deal.heading}</h1>
+					{/if}
+				</div>
+				<Button type={deal.type} fullWidth="true" small="true">{deal.btnText}</Button>
+			</div>
+		{/each}
 	</div>
-</div>
+</section>
+
+<section class="container">
+	<div class="tw-flex tw-justify-between tw-items-center">
+		<h6>Recommended</h6>
+		<Button small="true" outlined="true">View all</Button>
+	</div>
+	<div class="scroll horizontal">
+		{#each products as product}
+			<div class="scroll-item border-radius secondary-container on-secondary-container-text tw-overflow-hidden">
+				<div class="tw-w-72 tw-h-48">
+					<img src={product.thumbnail} alt={product.title} />
+				</div>
+				<div class="tw-p-4" style="font-size: var(--step--1)">
+					<article class="tw-mb-3">
+						<p>{product.brand}</p>
+						<h6>{product.title?.length > 20 ? product.title.slice(0, 20) + '...' : product.title}</h6>
+					</article>
+					<Button type="secondary" small="true">View</Button>
+				</div>
+			</div>
+		{/each}
+	</div>
+</section>
 
 <FloatingCard />
 
 <Vertical />
 
 <style>
-	h2 {
-		font-family: Satoshi;
+	h1 {
+		font-family: var(--sans);
 		font-weight: 500;
+	}
+
+	h1 > :global(span) {
+		font-size: var(--step-1);
+		margin-left: 4px;
 	}
 </style>

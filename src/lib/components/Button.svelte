@@ -1,15 +1,15 @@
 <script lang="ts">
 	type types = 'primary' | 'secondary' | 'error'
 	type container = 'container'
-	type ButtonType = types | `${types}-${container}` | 'disabled'
+	type ButtonType = types | `${types}-${container}` | 'surface' | 'disabled' | string
 
 	export let type: ButtonType = 'primary',
-		small: boolean | 'true' = false,
+		small: 'true' | null = null,
 		role: 'button' | 'link' = 'button',
 		href: string = '',
 		gap: string = '.25rem',
-		fullWidth: boolean | 'true' = false,
-		outlined = false
+		fullWidth: 'true' | null = null,
+		outlined: 'true' | null = null
 </script>
 
 {#if role === 'button'}
@@ -17,7 +17,7 @@
 		<slot />
 	</button>
 {:else if role === 'link'}
-	<a {href} role="button" style="--gap: {gap}; --color: var(--on-{type}); --background: var(--{type});" class:small class:fullWidth class:outlined>
+	<a {href} role="button" style="--gap: {gap}; --color: var(--on-{type}); --background: var(--{type});" class:small class:fullWidth class:outlined class:disabled={type === 'disabled'}>
 		<slot />
 	</a>
 {/if}
@@ -27,7 +27,7 @@
 	a[role='button'] {
 		background-color: var(--background);
 		border: 2px solid var(--shadow);
-		box-shadow: var(--shadow) 4px 4px 0 0;
+		box-shadow: var(--shadow) 2px 2px 0 0;
 		color: var(--color);
 		padding-block: var(--space-xs);
 		padding-inline: var(--space-m);
@@ -37,6 +37,8 @@
 		font-size: var(--step--1);
 
 		cursor: pointer;
+		user-select: none;
+		-webkit-user-select: none;
 
 		width: max-content;
 		display: flex;
@@ -48,15 +50,16 @@
 
 	button:is(:active, :focus-visible):not(:disabled),
 	a[role='button']:is(:active, :focus-visible) {
-		box-shadow: var(--shadow) 2px 2px 0 0;
+		box-shadow: var(--shadow) 0px 0px 0 0;
 		transform: translate(2px, 2px);
 	}
 
-	button:disabled {
+	button:disabled,
+	a[role='button'].disabled {
 		background-color: var(--outline-variant);
 		color: var(--outline);
 		cursor: not-allowed;
-		box-shadow: var(--shadow) 2px 2px 0 0;
+		box-shadow: none;
 	}
 
 	button.fullWidth,
@@ -71,7 +74,8 @@
 		padding-inline: var(--space-s);
 	}
 
-	button.outlined {
+	button.outlined,
+	a[role='button'].outlined {
 		background-color: transparent;
 		color: inherit;
 	}
