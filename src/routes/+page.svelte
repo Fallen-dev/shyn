@@ -15,6 +15,28 @@
 	</svg>
 </Button>
 
+<div class="container">
+	<div class="card primary-container">
+		<div class="tw-flex tw-justify-between tw-items-center">
+			<article>
+				<h3>Best deals</h3>
+				<p>On Electronics</p>
+			</article>
+			<article>
+				<h2>36% off</h2>
+			</article>
+		</div>
+		<Button fullWidth="true" small="true">Shop now</Button>
+	</div>
+</div>
+
 <FloatingCard />
 
 <Vertical />
+
+<style>
+	h2 {
+		font-family: Satoshi;
+		font-weight: 500;
+	}
+</style>

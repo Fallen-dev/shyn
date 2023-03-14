@@ -16,4 +16,4 @@
 <Button>Primary</Button>
 <Button type="secondary">Secondary</Button>
 <Button type="error">Error</Button>
-<Button disabled>Disabled</Button>
+<Button type="disabled">Disabled</Button>
