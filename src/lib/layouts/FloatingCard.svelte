@@ -1,7 +1,6 @@
 <script>
-	// @ts-ignore
 	import skincare_image from '$lib/assets/skincare-shiny-diamond.jpg?w=400&format=avif;webp;jpg&picture&flop'
-	import Button from '../Button.svelte'
+	import Button from '$lib/components/Button.svelte'
 
 	import getImage from '$lib/getImage'
 	import Picture from '$lib/components/Picture.svelte'
@@ -16,10 +15,16 @@
 <!-- Layout 1 -->
 <div class="container tw-flex tw-flex-col">
 	<Picture {datasets} alt="Woman applying facial mask. Photo by Shiny Diamond on Pexels." borderRadius="true" fallback={fallback.src} style={styles.join(';')} />
-	<div class="card surface-variant on-surface-variant-text">
-		<h3>Start a perfect skincare regime</h3>
-		<p>With our latest skincare collection, you can get the glass glow skin.</p>
-		<Button small="true" type="primary-container" outlined="true">Start now</Button>
+	<div class="card border-radius surface-variant on-surface-variant-text">
+		<div class="card--body tw-gap-md tw-p-md">
+			<article class="tw-space-y-sm">
+				<h3>Start a perfect skincare regime</h3>
+				<p>With our latest skincare collection, you can get the glass glow skin.</p>
+			</article>
+			<div class="card--actions">
+				<Button small="true" type="primary-container" outlined="true">Start now</Button>
+			</div>
+		</div>
 	</div>
 </div>
 

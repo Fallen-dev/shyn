@@ -21,7 +21,7 @@
 	--on-background-light: #1c1d00;
 	--surface-light: #fffbff;
 	--on-surface-light: #1c1d00;
-	--surface-variant-light: #ede1cf;
+	--surface-variant-light: #eed8ba;
 	--on-surface-variant-light: #312d24;
 	--outline-light: #7f7667;
 	--inverse-on-surface-light: #f5f77e;
@@ -52,7 +52,7 @@
 	--on-background-dark: #e6e971;
 	--surface-dark: #1e1b16;
 	--on-surface-dark: #e9e1d9;
-	--surface-variant-dark: #4d4639;
+	--surface-variant-dark: #4e4535;
 	--on-surface-variant-dark: #e0d4c2;
 	--outline-dark: #9a8f80;
 	--inverse-on-surface-dark: #1c1d00;
@@ -60,6 +60,6 @@
 	--inverse-primary-dark: #7a5900;
 	--shadow-dark: #000000;
 	--surface-tint-dark: #f5be48;
-	--outline-variant-dark: #4d4639;
+	--outline-variant-dark: #3b3933;
 	--scrim-dark: #000000;
 }

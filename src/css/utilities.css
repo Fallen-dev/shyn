@@ -1,0 +1,33 @@
+.no-border-radius {
+	border-radius: 0;
+}
+
+.border-radius {
+	border-radius: var(--step-3);
+}
+
+.scroll {
+	display: flex;
+	align-items: center;
+	scroll-snap-type: x mandatory;
+}
+
+.scroll.horizontal {
+	overflow-x: scroll;
+}
+
+.scroll .scroll-item + .scroll-item {
+	margin-left: var(--space-s);
+}
+
+.scroll .scroll-item {
+	flex: 0 0 auto;
+	scroll-snap-align: start;
+}
+.container {
+	padding: var(--space-m);
+}
+
+.container > * + * {
+	margin-top: var(--space-m);
+}

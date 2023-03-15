@@ -6,8 +6,8 @@
 	export let type: ButtonType = 'primary',
 		small: 'true' | null = null,
 		role: 'button' | 'link' = 'button',
-		href: string = '',
-		gap: string = '.25rem',
+		href = '',
+		gap = '.25rem',
 		fullWidth: 'true' | null = null,
 		outlined: 'true' | null = null
 </script>

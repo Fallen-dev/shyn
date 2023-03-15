@@ -1,9 +1,8 @@
 <script>
-	import Button from '../Button.svelte'
+	import Button from '$lib/components/Button.svelte'
 	import Picture from '$lib/components/Picture.svelte'
 
 	import getImage from '$lib/getImage'
-	// @ts-ignore
 	import bag_image from '$lib/assets/bag-cottonbro-studio.jpg?w=400&format=avif;webp;jpg&picture'
 
 	const { sources, fallback } = bag_image

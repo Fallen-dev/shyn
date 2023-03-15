@@ -2,7 +2,7 @@
 	export let datasets: any,
 		fallback: string,
 		alt: string,
-		style: string = '',
+		style = '',
 		borderRadius: 'true' | null = null
 </script>
 

@@ -1,7 +1,9 @@
+@import url(./css/utilities.css);
 @import url(./css/tokens.css);
 @import url(./css/colors.module.css);
-@import url(./css/theme.light.css) (prefers-color-scheme: light);
-@import url(./css/theme.dark.css) (prefers-color-scheme: dark);
+/* @import url(./css/theme.light.css) (prefers-color-scheme: light);
+@import url(./css/theme.dark.css) (prefers-color-scheme: dark); */
+@import url(./css/theme.light.css);
 
 @tailwind base;
 @tailwind utilities;
@@ -147,7 +149,7 @@ a:not([role='button']) {
 picture {
 	display: block;
 	overflow: hidden;
-	min-height: 5rem;
+	min-height: 10rem;
 }
 
 img {
@@ -158,49 +160,49 @@ img {
 }
 
 .card {
-	padding: var(--space-m);
-	border-radius: var(--step-3);
+	overflow: hidden;
 }
 
-.card > * + * {
-	margin-top: var(--space-s);
+.card picture {
+	min-height: 5rem;
+	overflow: hidden;
 }
 
-.card.no-border-radius {
-	border-radius: 0;
+.card .card--body {
+	display: grid;
+}
+
+.card--footer {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card--price {
+	display: flex;
+	align-items: flex-end;
+	gap: 0.4rem;
+}
+
+.card--price h5 {
+	font-family: var(--sans);
+	font-size: var(--step-3);
+	font-weight: 500;
+}
+
+.card--price p {
+	font-weight: 500;
 }
 
 .card h3 {
 	font-size: var(--step-2);
 }
 
-.border-radius {
-	border-radius: var(--step-3);
-}
-
-.container {
-	padding: var(--space-m);
-}
-
-.container > * + * {
-	margin-top: var(--space-m);
-}
-
-.scroll {
+.card--actions {
+	margin-left: auto;
 	display: flex;
-	align-items: flex-start;
-	scroll-snap-type: x mandatory;
-}
-
-.scroll.horizontal {
-	overflow-x: scroll;
-}
-
-.scroll .scroll-item + .scroll-item {
-	margin-left: var(--space-s);
-}
-
-.scroll .scroll-item {
-	flex: 0 0 auto;
-	scroll-snap-align: start;
+	justify-content: flex-end;
+	align-items: center;
+	gap: var(--space-xs);
 }
