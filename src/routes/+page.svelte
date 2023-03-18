@@ -62,7 +62,7 @@
 <section class="container">
 	<div class="tw-flex tw-justify-between tw-items-center">
 		<h6>Recommended</h6>
-		<Button small="true" outlined="true">View all</Button>
+		<Button small="true" outlined="true" role="link" href="/products">View all</Button>
 	</div>
 	<div class="scroll horizontal">
 		{#each products as product}
