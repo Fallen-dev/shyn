@@ -1,23 +1,26 @@
 <script lang="ts">
-	type types = 'primary' | 'secondary' | 'error'
-	type container = 'container'
-	type ButtonType = types | `${types}-${container}` | 'surface' | 'disabled' | string
-
 	export let type: ButtonType = 'primary',
 		small: 'true' | null = null,
 		role: 'button' | 'link' = 'button',
 		href = '',
 		gap = '.25rem',
-		fullWidth: 'true' | null = null,
-		outlined: 'true' | null = null
+		fullWidth: 'true' | null = null
 </script>
 
 {#if role === 'button'}
-	<button style="--gap: {gap}; --color: var(--on-{type}); --background: var(--{type});" class:small class:fullWidth class:outlined disabled={type === 'disabled'}>
+	<button style="--gap: {gap}; --color: var(--on-{type}); --background: var(--{type});" class:small class:fullWidth class:outlined={type === 'outlined'} disabled={type === 'disabled'}>
 		<slot />
 	</button>
 {:else if role === 'link'}
-	<a {href} role="button" style="--gap: {gap}; --color: var(--on-{type}); --background: var(--{type});" class:small class:fullWidth class:outlined class:disabled={type === 'disabled'}>
+	<a
+		{href}
+		role="button"
+		style="--gap: {gap}; --color: var(--on-{type}); --background: var(--{type});"
+		class:small
+		class:fullWidth
+		class:outlined={type === 'outlined'}
+		class:disabled={type === 'disabled'}
+	>
 		<slot />
 	</a>
 {/if}

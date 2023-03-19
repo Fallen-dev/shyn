@@ -2,17 +2,24 @@ import { url } from '$lib/server/url'
 import { error } from '@sveltejs/kit'
 import type { PageServerLoad } from './$types'
 
-export const load: PageServerLoad = async ({ fetch, params, cookies }): Promise<{ product: object; country: string | undefined }> => {
-	async function getProduct(): Promise<object> {
-		const res = await fetch(url + '/product/' + params.id)
-		if (!res.ok)
-			throw error(res.status, {
-				message: res.statusText
+type DeferData = Promise<APIData>
+
+export const load: PageServerLoad = async ({ fetch, params }) : Promise<{product: DeferData}>=> {
+
+	async function getProduct(): DeferData {
+		try {
+			const res = await fetch(url + '/product/' + params.id)
+			if (!res.ok) console.error({ status: res.status, message: res.text })
+			return await res.json()
+		}
+		catch (err: any) {
+			throw error(500, {
+				message: err
 			})
-		return res.json()
+		}
 	}
+
 	return {
-		product: getProduct(),
-		country: cookies.get('country')
+		product: getProduct()
 	}
 }

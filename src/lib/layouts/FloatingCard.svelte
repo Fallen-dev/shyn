@@ -22,7 +22,7 @@
 				<p>With our latest skincare collection, you can get the glass glow skin.</p>
 			</article>
 			<div class="card--actions">
-				<Button small="true" type="primary-container" outlined="true">Start now</Button>
+				<Button small="true" type="outlined" role="link" href="/shop/skincare">Start now</Button>
 			</div>
 		</div>
 	</div>

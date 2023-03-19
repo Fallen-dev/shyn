@@ -149,7 +149,7 @@ a:not([role='button']) {
 picture {
 	display: block;
 	overflow: hidden;
-	min-height: 10rem;
+	min-height: 4rem;
 }
 
 img {

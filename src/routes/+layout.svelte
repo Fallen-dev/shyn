@@ -1,14 +1,15 @@
-<script>
+<script lang="ts">
 	import '../app.css'
 	import TopBar from '$lib/components/TopBar.svelte'
 	import { fly } from 'svelte/transition'
-	import { page } from '$app/stores'
+
+	export let data: import('./$types').LayoutData
 </script>
 
 <TopBar />
 
-{#key $page.url}
-	<div in:fly={{ duration: 600, y: 50, delay: 600 }} out:fly={{ duration: 600, y: 50 }}>
+{#key data.url}
+	<div in:fly={{ duration: 600, y: 60, delay: 600 }} out:fly={{ duration: 600, y: 60 }}>
 		<slot />
 	</div>
 {/key}

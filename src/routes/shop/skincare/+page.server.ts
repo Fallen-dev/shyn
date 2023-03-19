@@ -1,6 +1,6 @@
 import { url } from '$lib/server/url'
 import { error } from '@sveltejs/kit'
-import type { PageServerLoad } from './$types'
+import type { PageServerLoad } from '../../$types'
 
 type DeferData = Promise<{ products: Array<APIData> }>
 
@@ -8,7 +8,7 @@ export const load: PageServerLoad = async ({ fetch }) : Promise<{allProducts: De
 
 	async function getProducts(): DeferData {
 		try {
-			const res = await fetch(url + '/products')
+			const res = await fetch(url + '/products/category/skincare')
 			if (!res.ok) console.error({ status: res.status, message: res.text })
 			return await res.json()
 		}

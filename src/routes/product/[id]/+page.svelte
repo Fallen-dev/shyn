@@ -29,7 +29,7 @@
 			</div>
 			<div class="tw-mt-3xs tw-flex tw-justify-between tw-items-center">
 				<h4 class="primary-text">{price(+product.price, +product.discountPercentage).afterDiscount()}</h4>
-				<Button type="primary-container" small="true">
+				<Button type="outlined" small="true">
 					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 						<path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
 					</svg>
@@ -46,16 +46,12 @@
 </section>
 
 <style>
+	h2 {
+		font-weight: 500;
+	}
 	h4 {
 		font-family: var(--sans);
 		font-size: var(--step-2);
 		font-weight: 700;
-	}
-	.details > div {
-		text-align: center;
-		border-radius: var(--step-3);
-		padding: var(--space-s);
-		break-inside: avoid;
-		margin-bottom: var(--space-xs);
 	}
 </style>

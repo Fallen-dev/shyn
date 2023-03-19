@@ -9,7 +9,9 @@
 
 	const { products } = data.products
 
-	const deals = [
+	type Deals = Array<{ type: ButtonType; title: string; desc?: string; heading?: string; btnText?: string }>
+
+	const deals: Deals = [
 		{
 			type: 'primary',
 			title: 'Best deals',
@@ -28,8 +30,8 @@
 			type: 'tertiary',
 			title: 'Welcome to Shyn',
 			desc: 'Shyn is currently under heavily development stage. It would take a lot of time to stable. Stay tuned!',
-			heading: null,
-			btnText: null
+			heading: undefined,
+			btnText: undefined
 		}
 	]
 </script>
@@ -62,7 +64,7 @@
 <section class="container">
 	<div class="tw-flex tw-justify-between tw-items-center">
 		<h6>Recommended</h6>
-		<Button small="true" outlined="true" role="link" href="/products">View all</Button>
+		<Button type="outlined" small="true" role="link" href="/products">View all</Button>
 	</div>
 	<div class="scroll horizontal">
 		{#each products as product}

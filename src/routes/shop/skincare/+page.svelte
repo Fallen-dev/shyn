@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte'
 	import price from '$lib/price'
-	import type { PageServerData } from './$types'
+	import type { PageServerData } from '../../$types'
 
 	export let data: PageServerData
 

@@ -7,6 +7,13 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+	interface APIData {
+		id: string; title: string; description: string; price: string; discountPercentage: string; rating: string; brand: string; category: string; thumbnail: string; images: Array<string>
+	}
+
+	type types = 'primary' | 'secondary' | 'tertiary' | 'error'
+	type container = 'container'
+	type ButtonType = types | `${types}-${container}` | 'surface' | 'disabled' | 'outlined'
 }
 
 export {}
